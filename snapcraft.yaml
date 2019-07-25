@@ -1,0 +1,22 @@
+name: exercism
+version: 3.0.12
+summary: Command-line client for https://exercism.io
+description: |
+    Exercism is an online platform designed to help you improve your coding skills through practice and mentorship.
+    Exercism provides you with thousands of exercises spread across numerous language tracks. 
+    Each one is a fun and interesting challenge designed to teach you a little more about the features of a language.
+license: MIT
+
+base: core18
+confinement: strict
+grade: devel
+
+parts:
+  exercism:
+    plugin: dump
+    source: https://github.com/exercism/cli/releases/download/v$SNAPCRAFT_PROJECT_VERSION/exercism-linux-64bit.tgz
+
+apps:
+  exercism:
+    command: ./exercism
+    plugs: [network, home, removable-media]
