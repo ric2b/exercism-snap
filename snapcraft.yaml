@@ -9,7 +9,7 @@ license: MIT
 
 base: core18
 confinement: strict
-grade: devel
+grade: stable
 
 parts:
   exercism:
