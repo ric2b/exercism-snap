@@ -1,5 +1,5 @@
-name: exercism
-version: 3.0.12
+name: ric2b-exercism
+version: v3.0.12
 summary: Command-line client for https://exercism.io
 description: |
     Exercism is an online platform designed to help you improve your coding skills through practice and mentorship.
@@ -11,10 +11,15 @@ base: core18
 confinement: strict
 grade: stable
 
+architectures:
+  - build-on: [amd64, i386]
+
 parts:
   exercism:
     plugin: dump
-    source: https://github.com/exercism/cli/releases/download/v$SNAPCRAFT_PROJECT_VERSION/exercism-linux-64bit.tgz
+    source: 
+        - on amd64: https://github.com/exercism/cli/releases/download/$SNAPCRAFT_PROJECT_VERSION/exercism-linux-64bit.tgz
+        - on i386: https://github.com/exercism/cli/releases/download/$SNAPCRAFT_PROJECT_VERSION/exercism-linux-32bit.tgz
 
 apps:
   exercism:
