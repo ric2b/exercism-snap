@@ -12,7 +12,7 @@ confinement: strict
 grade: stable
 
 architectures:
-  - build-on: [amd64, i386]
+  - build-on: [amd64, i386, arm64]
 
 parts:
   exercism:
@@ -20,6 +20,7 @@ parts:
     source: 
         - on amd64: https://github.com/exercism/cli/releases/download/$SNAPCRAFT_PROJECT_VERSION/exercism-linux-64bit.tgz
         - on i386: https://github.com/exercism/cli/releases/download/$SNAPCRAFT_PROJECT_VERSION/exercism-linux-32bit.tgz
+        - on arm64: https://github.com/exercism/cli/releases/download/$SNAPCRAFT_PROJECT_VERSION/exercism-linux-arm-v8.tgz
 
 apps:
   exercism:
